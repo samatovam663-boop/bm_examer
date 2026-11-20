@@ -1,0 +1,3 @@
+# Linux konteynerida ishlaydigan skriptlar CRLF bilan buzilmasin (Windows'da Git avtomatik o'zgartirishi mumkin)
+*.sh text eol=lf
+Dockerfile text eol=lf

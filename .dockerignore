@@ -1,0 +1,14 @@
+.git
+.claude
+backend/venv
+backend/.env
+backend/db.sqlite3
+backend/media
+backend/staticfiles
+backend/**/__pycache__
+frontend/node_modules
+frontend/dist
+frontend/dist-http
+BM_examer_demo.html
+*.md
+deploy

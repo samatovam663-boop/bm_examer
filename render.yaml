@@ -1,0 +1,26 @@
+# Render "Blueprint": servisni shu fayl bo'yicha avtomatik yaratadi (RENDER.md ga qarang).
+services:
+  - type: web
+    name: bm-examer
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health/
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        generateValue: true          # Render o'zi tasodifiy maxfiy kalit yaratadi
+      - key: DJANGO_DEBUG
+        value: "0"
+      - key: DJANGO_BEHIND_PROXY
+        value: "1"                   # Render HTTPS'ni o'zi bajaradi, Django proksi sarlavhasiga ishonadi
+      - key: DJANGO_HSTS_SECONDS
+        value: "3600"                # birinchi joylashda qisqa; hammasi ishlagach oshirish mumkin
+      - key: SERVE_MEDIA
+        value: "1"
+      - key: DATABASE_URL
+        sync: false                  # Neon (yoki Render Postgres) manzilini panelda o'zingiz kiritasiz
+      - key: DJANGO_SUPERUSER_USERNAME
+        sync: false
+      - key: DJANGO_SUPERUSER_PASSWORD
+        sync: false                  # admin parolini faqat siz bilasiz, kodda yo'q
+      - key: DJANGO_SUPERUSER_EMAIL
+        sync: false

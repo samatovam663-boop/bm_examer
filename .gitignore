@@ -1,5 +1,15 @@
+
+.env
 venv/
 __pycache__/
-*.pyc
 db.sqlite3
 media/
+staticfiles/
+node_modules/
+dist/
+dist-http/
+BM_examer_demo.html
+public_data/
+
+.claude/
+BM_examer_pa.zip
