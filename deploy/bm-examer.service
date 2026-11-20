@@ -1,0 +1,14 @@
+# /etc/systemd/system/bm-examer.service
+[Unit]
+Description=BM_examer (gunicorn)
+After=network.target
+
+[Service]
+User=www-data
+WorkingDirectory=/srv/bm_examer/backend
+# maxfiy ma'lumotlar backend/.env dan o'qiladi
+ExecStart=/srv/bm_examer/backend/venv/bin/gunicorn config.wsgi:application --bind 127.0.0.1:8000 --workers 3 --timeout 120
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
