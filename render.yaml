@@ -4,6 +4,7 @@ services:
     name: bm-examer
     runtime: docker
     plan: free
+    region: ohio
     healthCheckPath: /api/health/
     envVars:
       - key: DJANGO_SECRET_KEY
